@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'itadmin.wsgi.application'
 #DATABASES = {
 #    'default': {
 #                'ENGINE': 'django.db.backends.mysql',
-#                'NAME':   'itadmin',
-#                'USER':   'django',
-#                'PASSWORD':'ccg123#@!',
+#                'NAME':   'db',
+#                'USER':   'user',
+#                'PASSWORD':'passwd',
 #                'HOST':'localhost',
 #                'PORT':'3306',
 #                }
@@ -94,11 +94,11 @@ WSGI_APPLICATION = 'itadmin.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE' :'sql_server.pyodbc',
-            'NAME':'itadmin',
-            'HOST':'172.16.20.220',
+            'NAME':'db',
+            'HOST':'ip',
             'PORT':'1433',
-            'USER':'SA',
-            'PASSWORD':'ccg123#@!',
+            'USER':'user',
+            'PASSWORD':'pw',
             'OPTIONS': {
                                    'driver': 'ODBC Driver 17 for SQL Server',
                                     'unicode_results': True,
