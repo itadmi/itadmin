@@ -1,0 +1,42 @@
+[Default]
+    ifDescr              = 1.3.6.1.2.1.2.2.1.2
+    dot1dBasePortIfIndex = 1.3.6.1.2.1.17.1.4.1.2
+    ifName               = 1.3.6.1.2.1.31.1.1.1.1
+    dot1dTpFdbAddress    = 1.3.6.1.2.1.17.4.3.1.1
+    dot1dTpFdbPort       = 1.3.6.1.2.1.17.4.3.1.2
+    ipNetToMediaPhysAddress = 1.3.6.1.2.1.4.22.1.2
+    sysDecr                 = 1.3.6.1.2.1.1.1
+    version  = 1.3.6.1.2.1.1.1
+
+[CISCO6509]
+
+[H3C_S3100V2_26TP_SI]
+    dot1dTpFdbPort 	= 1.3.6.1.2.1.17.7.1.2.2.1.2
+
+[H3C]
+    ifDescr        	= 1.3.6.1.2.1.2.2.1.2
+    dot1dTpFdbPort      = 1.3.6.1.2.1.17.7.1.2.2.1.2
+    ipNetToMediaPhysAddress = 1.3.6.1.2.1.4.22.1.2
+ 
+[H3C7506]
+    ifDescr             = 1.3.6.1.2.1.2.2.1.2
+    dot1dTpFdbPort      = 1.3.6.1.2.1.17.7.1.2.2.1.2
+    ipNetToMediaPhysAddress = 1.3.6.1.2.1.4.22.1.2
+
+[H3C5560]
+    ifDescr             = 1.3.6.1.2.1.2.2.1.2
+    dot1dTpFdbPort      = 1.3.6.1.2.1.17.7.1.2.2.1.2
+    ipNetToMediaPhysAddress = 1.3.6.1.2.1.4.22.1.2
+
+[H3CS3100V2]
+    ifDescr        =      1.3.6.1.2.1.2.2.1.2
+    dot1dTpFdbPort = 1.3.6.1.2.1.17.7.1.2.2.1.2
+    ipNetToMediaPhysAddress = 1.3.6.1.2.1.4.22.1.2
+
+
+[S2620POE]
+    ifDescr        = 1.3.6.1.2.1.2.2.1.2
+    dot1dTpFdbPort = 1.3.6.1.2.1.17.7.1.2.2.1.2
+    ipNetToMediaPhysAddress = 1.3.6.1.2.1.4.22.1.2
+
+[CISCO]

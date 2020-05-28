@@ -1,0 +1,30 @@
+from django.core.management.base import BaseCommand, CommandError
+import multiprocessing
+import time
+
+from switch import models,command
+from switch import base
+
+from switch.define import *
+
+
+
+def target(switchObj):
+    oidName = 'ifDescr'
+    switchObj.taskNumber = '%s%s%s' % (switchObj.ip,oidName,int(time.time() ) )
+    comClass,comFunc = base.get_class_func(model=command,switchObj=switchObj,oidName=oidName)
+    if comFunc:
+        comFunc(comClass(),switchObj=switchObj,oidName=oidName)
+
+class Command(BaseCommand):
+    def handle(self, *args, **options):
+        
+        pool = multiprocessing.Pool(processes = processNumber)
+
+        switchS = models.Switch.objects.all()
+        for switchObj in switchS:
+            pool.apply_async(target,(switchObj,))
+
+        pool.close()
+        pool.join()     
+           

@@ -1,0 +1,6 @@
+wscript.exe \\domainserver\NETLOGON\getUserInfo.vbs ip db user pw
+通过AD域组策略，获取用户登入信息
+
+
+powershell.exe C:\Scripts\syncDhcpNewCopy.ps1  -dbserver ipAddress -database DBname -user sa -password passwd -dhcpid sjdhcp
+通过任务计划执行Powershell，获取计算机编号与Mac ,dhcpid标识DHCP服务器，因为多site会存在多个DHCP服务器

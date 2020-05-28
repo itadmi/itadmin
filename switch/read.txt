@@ -1,0 +1,27 @@
+ALTER TABLE switch_dhcplease DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci; 
+alter table `表名` convert to character set utf8;
+
+一:https://support.huawei.com/hedex/hdx.do?lib=EDOC100010161131189042&docid=EDOC1000101611&lang=zh&v=06&tocLib=EDOC100010161131189042&tocV=06&id=dc_mib_ipserv_example_0002_3&tocURL=resources%252fdc%252fdc%255fmib%255fipserv%255fexample%255f0004%252ehtml&p=t&fe=1&ui=3&keyword=ifdescr
+
+
+
+二: http://kms2.h3c.com/View.aspx?id=40150
+
+
+1：function 
+    initPort(*args,**args): 
+    dot1dBasePortIfIndex（1.3.6.1.2.1.17.1.4.1.2）获得接口索引
+    ifName（1.3.6.1.2.1.2.2.1.2）获得端口描述。
+2：function
+    getMac(*args,**args)
+    1.通过dot1dTpFdbAddress查询设备上存在的MAC地址表项。
+      dot1dTpFdbAddress.172.133.61.166.164.32”查询结果表明设备上存在一条MAC地址是AC:85:3D:A6:A4:20的表项。
+      其中172.133.61.166.164.32是MAC地址AC:85:3D:A6:A4:20的十进制显示
+    2.通过dot1dTpFdbPort查询MAC地址对应二层接口索引
+      询到了当前设备上存在的所有MAC地址表项对应的二层接口索引。
+      dot1dTpFdbPort.172.133.61.166.164.32 (integer) 11”查询结果表明MAC地址172.133.61.166.164.32对应的二层接口索引是1
+    
+   这里会有二个问题，脚本先读Mac地址表项，再读Mac地址对二层索时候，因为Mac地址是动态的
+   地址表项与Mac索引表可能会存在数量不致，也就是说可能地址表项没有，但索引表里有或者相反
+   还有旧交换机可能不支持dot1dTpFdbAddress,但是支持dot1dTpFdbPort，所有默认获取Mac时只取Mac地址
+   与二层接引索引，
